@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://5816riveroaks.com/sitemap.xml

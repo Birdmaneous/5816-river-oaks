@@ -73,6 +73,13 @@ a{color:var(--orange-d)}
 .thumb span{display:block;padding:10px 12px;font-size:.9rem;font-weight:600}
 .thumb:hover{border-color:var(--orange)}
 
+/* floor plan */
+.plan{margin:28px 0 0}
+.thumb--plan{background:#fff;padding:0}
+.thumb--plan img{aspect-ratio:1400/942;object-fit:contain;background:#fff}
+.thumb--plan span{background:var(--navy);color:#fff;text-align:center;padding:12px}
+.plan figcaption{margin-top:12px;color:var(--muted);font-size:.95rem;max-width:70ch}
+
 /* specs */
 .specs{width:100%;border-collapse:collapse;margin:24px 0}
 .specs th,.specs td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -108,11 +115,16 @@ address{font-style:normal;font-size:1.2rem;font-weight:600;margin-bottom:1rem;co
 .footer strong{color:#fff}
 
 /* lightbox */
-.lightbox{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%;color:#fff}
+.lightbox{border:0;padding:0;background:#07101c;max-width:100vw;max-height:100vh;width:100%;height:100%;color:#fff}
 .lightbox::backdrop{background:rgba(5,10,18,.92)}
 .lightbox[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:16px}
 .lightbox figure{margin:0;text-align:center}
+.lightbox figure{width:100%;display:flex;flex-direction:column;align-items:center;min-height:0}
+.lightbox__scroll{max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom;border-radius:6px}
 .lightbox img{max-height:70vh;max-width:min(100%,960px);margin:0 auto;border-radius:6px}
+.lightbox.is-plan img{background:#fff;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 170px);max-height:calc(100dvh - 170px)}
+.lightbox.is-plan.is-zoomed img{max-width:none;max-height:none;width:2398px;height:auto}
+.lightbox[hidden],.lightbox__bar [hidden]{display:none}
 .lightbox figcaption{margin-top:10px}
 .lightbox__bar{display:flex;gap:12px}
 .lightbox__bar button{min-width:56px;min-height:48px;padding:0 20px;font:700 1rem system-ui;border-radius:8px;border:2px solid #fff;background:transparent;color:#fff;cursor:pointer}

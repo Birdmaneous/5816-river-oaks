@@ -72,6 +72,7 @@
       <a href="#highlights">Highlights</a>
       <a href="#photos">Photos</a>
       <a href="#specs">Specs</a>
+      <a href="#plan">Floor plan</a>
       <a href="#location">Location</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -144,7 +145,7 @@
     <p class="eyebrow">Photos</p>
     <h2>Take a look inside and out</h2>
     <p class="lede">Tap or click any photo to enlarge. </p>
-    <ul class="gallery">
+    <ul class="gallery" data-group="photos">
       <li><button type="button" class="thumb" data-full="img/exterior.webp" data-cap="Front of building"><img src="img/exterior.webp" width="1418" height="789" loading="lazy" alt="Front of building"><span>Front of building</span></button></li>
       <li><button type="button" class="thumb" data-full="img/office-front.webp" data-cap="Front manager/owner’s office"><img src="img/office-front.webp" width="640" height="480" loading="lazy" alt="Front manager/owner’s office with wood cabinetry and desk"><span>Front manager/owner’s office</span></button></li>
       <li><button type="button" class="thumb" data-full="img/office-rear.webp" data-cap="Rear office/work area"><img src="img/office-rear.webp" width="640" height="480" loading="lazy" alt="Rear office and work area"><span>Rear office/work area</span></button></li>
@@ -185,7 +186,22 @@
   </div>
 </section>
 
-<section class="section section--tint" id="suits">
+<section class="section section--tint" id="plan">
+  <div class="wrap" data-group="plan">
+    <p class="eyebrow">Floor plan</p>
+    <h2>Building plans</h2>
+    <p class="lede">Scanned building plans showing the floor plan, elevations, plot plan and opening schedule.</p>
+    <figure class="plan">
+      <button type="button" class="thumb thumb--plan" data-full="img/floor-plan.webp" data-cap="Building plans (floor plan, elevations, plot plan, opening schedule)" data-zoom="1" aria-label="Open the building plans full size to zoom and scroll">
+        <img src="img/floor-plan-1400.webp" width="1400" height="942" loading="lazy" alt="Scanned building plans sheet titled Building Plans, with a floor plan, east, north and south elevations, a plot plan and an opening schedule">
+        <span>Tap or click to open full size and zoom</span>
+      </button>
+      <figcaption>Scanned building plans: floor plan, elevations, plot plan and opening schedule. Scan quality is limited and the building may differ from the drawings, so verify details on site.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="suits">
   <div class="wrap">
     <p class="eyebrow">Who it suits</p>
     <h2>Space for a range of industrial uses</h2>
@@ -200,7 +216,7 @@
   </div>
 </section>
 
-<section class="section" id="location">
+<section class="section section--tint" id="location">
   <div class="wrap loc">
     <div class="loc__copy">
       <p class="eyebrow">Location</p>
@@ -245,14 +261,15 @@
   </div>
 </footer>
 
-<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
   <figure>
-    <img id="lbImg" alt="">
+    <div class="lightbox__scroll" id="lbScroll" tabindex="0"><img id="lbImg" alt=""></div>
     <figcaption id="lbCap"></figcaption>
   </figure>
   <div class="lightbox__bar">
     <button type="button" id="lbPrev" aria-label="Previous photo">&larr;</button>
-    <button type="button" id="lbClose" aria-label="Close photo viewer">Close</button>
+    <button type="button" id="lbZoom" hidden aria-pressed="false">Full size</button>
+    <button type="button" id="lbClose" aria-label="Close image viewer">Close</button>
     <button type="button" id="lbNext" aria-label="Next photo">&rarr;</button>
   </div>
 </dialog>
